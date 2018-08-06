@@ -15,6 +15,9 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
 import { MensajesinnerComponent } from './components/mensajesinner/mensajesinner.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     NgbModule.forRoot(),
     AngularFontAwesomeModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [ChatsService],
   bootstrap: [AppComponent]
