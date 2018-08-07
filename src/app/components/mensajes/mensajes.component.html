@@ -12,4 +12,11 @@
   <a href="#">
     <i class="fa fa-thumbs-up fa-3x"></i>
   </a>
+
+  <div *ngFor="let mesa of conversacionList">
+    <strong>
+      {{mesa.llave}}
+  </strong>: {{mesa.valor}}
+  </div>
+
 </div>

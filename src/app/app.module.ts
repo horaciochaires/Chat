@@ -16,6 +16,13 @@ import { MensajesinnerComponent } from './components/mensajesinner/mensajesinner
 import { LoginComponent } from './pages/login/login.component';
 import { FilterPipe } from './pipes/filter.pipe';
 
+//Firbase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +40,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     NgbModule.forRoot(),
     AngularFontAwesomeModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [ChatsService],
   bootstrap: [AppComponent]
